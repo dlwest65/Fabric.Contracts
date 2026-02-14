@@ -7,4 +7,8 @@ public interface IWeaveService
 
     Task<Dictionary<string, object?>?> GetRowByIdAsync(
         TenantContext tenant, string database, string tableName, object id);
+
+    Task<UpdateResult> UpdateRowsAsync(
+        TenantContext tenant, string database, string tableName,
+        IEnumerable<Dictionary<string, object?>> rows);
 }
